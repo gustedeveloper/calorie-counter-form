@@ -47,21 +47,29 @@
               <div class="input-container"></div>
             </legend>
           </fieldset>
-          <label for="add"
-            >Add food or exercise:
-            <select>
-              <option value="breakfast">Breakfast</option>
-              <option value="lunch">Lunch</option>
-              <option value="dinner">Dinner</option>
-              <option value="snacks">Snacks</option>
-              <option value="exercise">Exercise</option></select
-            ><button id="entry-button">Add entry</button></label
-          >
-          <div id="buttons">
-            <button id="cal-rem-button">Calculate remaining calories</button>
-            <button id="clear-button">Clear</button>
+          <div class="controls">
+            <span>
+              <label for="entry-dropdown"
+                >Add food or exercise:
+                <select id="entry-dropdown" name="options">
+                  <option value="breakfast" selected>Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                  <option value="snacks">Snacks</option>
+                  <option value="exercise">Exercise</option>
+                </select>
+                <button id="add-entry" type="button">Add entry</button></label
+              >
+            </span>
+            <div id="buttons">
+              <button id="cal-rem" type="submit">
+                Calculate remaining calories
+              </button>
+              <button id="clear" type="button">Clear</button>
+            </div>
           </div>
         </form>
+        <div id="output" class="output hide"></div>
       </div>
     </main>
   </body>
