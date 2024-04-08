@@ -30,6 +30,34 @@ function addEntry() {
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
 
+function calculateCalories(e) {
+    e.preventDefault();
+    isError = false;
+    const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
+}
+
+
+function getCaloriesFromInputs(list) {
+    let calories = 0;
+
+    for (const item of list) {
+        const currVal = cleanInputString(item.value);
+        const invalidInputMatch = isInvalidInput(currVal);
+
+        if (invalidInputMatch) {
+            alert(`Invalid Input: ${invalidInputMatch[0]}`);
+            isError = true;
+            return null;
+        }
+
+        calories += Number(currVal);
+    }
+
+    return calories;
+
+}
+
+
 function clear() {
     const inputContainers = document.querySelectorAll('.input-container');
 
