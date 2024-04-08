@@ -30,5 +30,17 @@ function addEntry() {
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
 
+function clear() {
+    const inputContainers = document.querySelectorAll('.input-container');
+
+    inputContainers.forEach(container => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+});
+    
+}
+
 
 addEntryButton.addEventListener("click", addEntry);
+clearButton.addEventListener("click", clear);
